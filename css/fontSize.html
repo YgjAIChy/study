@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*body{*/
+        /*    background: red;*/
+        /*}*/
+        .btn1 {
+            padding: 6px 16px;
+            border: 1px solid #446d88;
+            background: #58a linear-gradient(#77a0bb, #58a);
+            border-radius: 4px;
+            box-shadow: 0 1px 5px gray;
+            color: white;
+            text-shadow: 0 -1px 1px #335166;
+            font-size: 20px;
+            line-height: 30px;
+        }
+        /* 行高是字号的1.5倍 */
+        .btn2 {
+            padding: 6px 16px;
+            border: 1px solid #446d88;
+            background: #58a linear-gradient(#77a0bb, #58a);
+            border-radius: 4px;
+            box-shadow: 0 1px 5px gray;
+            color: white;
+            text-shadow: 0 -1px 1px #335166;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+        /* 使用百分比 */
+        .btn3 {
+            padding: 6px 16px;
+            border: 1px solid #446d88;
+            background: #58a linear-gradient(#77a0bb, #58a);
+            border-radius: 4px;
+            box-shadow: 0 1px 5px gray;
+            color: white;
+            text-shadow: 0 -1px 1px #335166;
+            font-size: 125%; /* 父级 16px 16 * 1.25 = 20 */
+            line-height: 1.5;
+        }
+        /* 使用em */
+        .btn4 {
+            padding: .3em .8em;
+            border: 1px solid #446d88;
+            background: #58a linear-gradient(#77a0bb, #58a);
+            border-radius: .2em;
+            box-shadow: 0 .05em .25em gray;
+            color: white;
+            text-shadow: 0 -.05em .5em #335166;
+            font-size: 125%; /* 父级 16px 16 * 1.25 = 20 */
+            line-height: 1.5;
+        }
+        /* 半透明黑色或白色添加到主色调上  */
+        .btn5 {
+            padding: .3em .8em;
+            border: 1px solid rgba(0, 0, 0, .1);
+            background: #58a linear-gradient(hsla(0,0%,100%,.2),transparent);
+            border-radius: .2em;
+            box-shadow: 0 .05em .25em rgba(0,0,0,.5);
+            color: white;
+            text-shadow: 0 -.05em .5em rgba(0,0,0,.5);
+            font-size: 125%; /* 父级 16px 16 * 1.25 = 20 */
+            line-height: 1.5;
+        }
+        button.cancel{
+            background: #c00;
+        }
+        button.ok{
+            background: #6b0;
+        }
+        .btn6 {
+            padding: .3em .8em;
+            border: 1px solid #446d88;
+            background: #58a linear-gradient(#77a0bb, #58a);
+            border-radius: .2em;
+            box-shadow: 0 .05em .25em gray;
+            color: white;
+            text-shadow: 0 -.05em .5em #335166;
+            font-size: 125%; /* 父级 16px 16 * 1.25 = 20 */
+            line-height: 1.5;
+            border-width: 10px 10px 10px 0;
+        }
+
+        .btn7 {
+            padding: .3em .8em;
+            border: 1px solid #446d88;
+            background: #58a linear-gradient(#77a0bb, #58a);
+            border-radius: .2em;
+            box-shadow: 0 .05em .25em gray;
+            color: white;
+            text-shadow: 0 -.05em .5em #335166;
+            font-size: 125%; /* 父级 16px 16 * 1.25 = 20 */
+            line-height: 1.5;
+            border-width: 10px;
+            border-left-width: 0;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn1">Yes!</button>
+    <button class="btn2">Yes!</button>
+    <button class="btn3">Yes!</button>
+    <button class="btn4">Yes!</button>
+    <button class="btn5">Yes!</button>
+    <button class="btn5 cancel">Cancel</button>
+    <button class="btn5 ok">OK</button>
+    <button class="btn6">left width</button>
+    <button class="btn7">left width</button>
+
+</body>
+</html>
