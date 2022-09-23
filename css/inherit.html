@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input,select,button{
+            font: inherit;
+            color: beige;
+            font-size: 18px;
+        }
+        a{
+            color: inherit;
+        }
+        .callout{
+            background: olive;
+            position: relative;
+        }
+        .callout::before{
+            content: "";
+            position: absolute;
+            top: -.4em;
+            left: 1em;
+            padding: .35em;
+            background: inherit;
+            border: inherit;
+            border-right: 0;
+            border-bottom: 0;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- inherit（继承） 总是绑定到父元素的计算值，（伪元素来说，则会取生成该伪元素的宿主元素） 举例来说，要把表单元素的字体设定为与页面的其他部门相同，并不需要重复指定字体属性，只需要利用inherit属性 -->
+    Your userName:
+    <input value="I Love You">
+    <button>
+        <a href="#">这是a标签</a>
+    </button>
+    <div class="callout">
+        I Love You
+    </div>
+</body>
+
+</html>
