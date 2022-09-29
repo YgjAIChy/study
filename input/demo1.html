@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body>
+<input class="text" id="policyNo" name="policyNo" type="text" oninput="this.value=this.value.replace(/^[0-9]*$/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"
+       maxlength="14" style="width:188px;" placeHolder="请输入批单号">
+<input class="text" name="policyNo" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')"
+       maxlength="14" style="width:188px;" placeHolder="请输入批单号">
+<input class="text" name="policyNo" type="number" onkeypress="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')"
+       maxlength="14" style="width:188px;" placeHolder="请输入批单号">
+<input onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+<input id="residenceTime" type="number"  oninput="return (/^[0-9]*$/g.test(String.fromCharCode(event.keyCode)))" />
+<input id="residenceTime2" type="number"   oninput="return (/^[0-9]*$/g)" />
+<input id="residenceTime3" type="number" oninput="if(e.keyCode == 101 || e.keyCode == 46 || e.keyCode == 43 || e.keyCode == 45){
+return false;
+} else return (/^[0-9]*$/)" />
+<input id="residenceTime4" type="text" placeHolder="4444444"/>
+<input id="residenceTime5" type="number"  placeHolder="555555"/>
+<input id="residenceTime6" type="text"  placeHolder="6666"/>
+<input id="residenceTime7" type="text"  placeHolder="7777"/>
+
+</body>
+<script>
+    //如果需要小数点的话，把e.keyCode == 46去掉即可。
+    document.getElementById('residenceTime4').addEventListener('blur',function(e){
+        e.target.value = e.target.value.replace(/\D/g,'')
+    })
+
+    document.getElementById('residenceTime5').addEventListener('input',function(e){
+        console.log(e,'eee')
+        // console.log(e.target.value)
+        // e.target.value = e.target.value.replace(/\D/g,'')
+
+        // console.log(e)
+        // console.log(e.data)
+        const regPos = / ^\d+$/; // 非负整数
+        if(regPos.test(e.data)){
+            return true;
+        }else{
+// e.target.value = e.target.value.replace(/\D/g,'')
+            console.log(e.target.value,'222')
+            return false;
+        }
+        // if(e.keyCode == 101 || e.keyCode == 46 || e.keyCode == 43 || e.keyCode == 45){
+        //     return false;
+        // }
+    })
+
+    document.getElementById('residenceTime6').addEventListener('keypress',function(e){
+        console.log(e,'eee')
+        // console.log(e.target.value)
+        // e.target.value = e.target.value.replace(/\D/g,'')
+
+        // console.log(e)
+        console.log(Number(e.key))
+        const regPos = / ^\d+$/; // 非负整数
+        if(regPos.test(Number(e.key))){
+            e.target.value = e.target.value.replace(/\D/g,'')
+            return true;
+        }else{
+            e.target.value = e.target.value.replace(/\D/g,'')
+            console.log(e.target.value,'222')
+            return false;
+        }
+        // if(e.keyCode == 101 || e.keyCode == 46 || e.keyCode == 43 || e.keyCode == 45){
+        //     return false;
+        // }
+        // }
+    })
+
+    document.getElementById('residenceTime7').addEventListener('change',function(e){
+        console.log(e,'eee')
+        // console.log(e.target.value)
+        e.target.value = e.target.value.replace(/\D/g,'')
+
+        // console.log(e)
+        const regPos = / ^\d+$/; // 非负整数
+        if(regPos.test(e.key)){
+            return true;
+        }else{
+            e.target.value = e.target.value.replace(/\D/g,'')
+            console.log(e.target.value,'222')
+            return false;
+        }
+        // if(e.keyCode == 101 || e.keyCode == 46 || e.keyCode == 43 || e.keyCode == 45){
+        //     return false;
+        // }
+    })
+</script>
+</html>
