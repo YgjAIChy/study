@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    // jQuery(document).ready(function(){
+    //
+    //     checkCustomize = function(){
+    //
+    //         var lfrq = jQuery("#field34459").val(); //来访日期
+    //         var curDate = new Date();
+    //
+    //         alert("curDate :"+curDate );
+    //
+    //         if(lfrq >curDate ){
+    //             alert("11111");
+    //             return false;
+    //         }
+    //         return true;
+    //     }
+    //
+    // });
+
+    let dateTime = new Date();
+    let timer= new Date('2023-09-07');
+
+    dateTime=dateTime.setDate(dateTime.getDate()+2);
+    dateTime=new Date(dateTime);
+
+    alert(new Date())
+
+    alert(dateTime,'dateTime')
+
+    console.log(dateTime - timer)
+    console.log(timer - dateTime)
+
+    console.log('************')
+
+
+    let first = '2020/01/25';
+    let second = '2020/01/20';
+
+
+    if (first < second) {
+        console.log(`${first} is less than ${second}`);
+    }
+    else if (first > second) {
+        console.log(`${first} is greater than ${second}`);
+    }
+    else {
+        console.log(`${first} is equal to ${second}`);
+    }
+
+
+    console.log('************')
+
+
+    let first1 = '2023-01-25';
+    let second1 = '2023-01-28';
+
+
+    if (first1 < second1) {
+        console.log(`${first1} is less than ${second1}`);
+    }
+    else if (first > second) {
+        console.log(`${first1} is greater than ${second1}`);
+    }
+    else {
+        console.log(`${first1} is equal to ${second1}`);
+    }
+
+    function getDate(num){
+        let date = new Date(num);
+        //当使用setDate()之后，date对象就发生了改变，所以之后getDate()就能获取到指定的日期
+        //这里的num就是你要加的天数，减也可以。
+        let year = date.getFullYear()				//年
+        let month = date.getMonth() + 1				//月
+        let day = date.getDate();					//天数
+        if(month >= 1 && month <= 9) {
+            month = `0${month}`
+        }
+        if(day >= 1 && day <= 9) {
+            day = `0${day}`
+        }
+        return `${year}-${month}-${day}`
+    }
+
+    console.log(getDate(first1) > getDate(second1))
+
+    if(getDate(first1) > getDate(second1)){
+        console.log(111)
+    } else {
+        console.log(222)
+    }
+
+</script>
+</html>
