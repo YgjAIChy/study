@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    // 创建一个异步函数，用于执行接口调用
+    async function callAPI(endpoint, data) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log(endpoint + data.ite);
+                resolve(endpoint + data.ite);
+            }, 10000);
+        });
+    }
+
+    // 创建一个函数，用于顺序调用接口
+    async function sequentialAPICalls() {
+        try {
+            const endpoints = 'http://10.10.120.40:9000/file/getSubFile';
+            const arr1 = [1, 2, 3, 4, 5, 6, 7, 8];
+
+            for (const endpoint of arr1) {
+                const data = await callAPI(endpoints, { ite: endpoint });
+                console.log('接口完成', data);
+            }
+        } catch (error) {
+            console.error('接口调用出错', error);
+        }
+    }
+
+    // 调用函数以开始顺序调用接口
+    sequentialAPICalls();
+
+
+</script>
+
+</html>
